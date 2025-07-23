@@ -1,11 +1,10 @@
-import { Button } from "@/components/ui/button";
 
-const Page=()=>{
+
+const Page= ()=>{
+ 
   return(
-    <div className="font-bold">
-     <Button>
-      Click me
-     </Button>
+    <div >
+   hello
     </div>
   )
 }
