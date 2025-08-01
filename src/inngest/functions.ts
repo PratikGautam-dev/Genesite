@@ -16,7 +16,7 @@ export const codeAgentFunction = inngest.createFunction(
   { event: "code-agent/run" },
   async ({ event, step }) => {
     const sandboxId = await step.run("get-sandbox-id", async () => {
-      const sandbox = await Sandbox.create("lovable-test");
+      const sandbox = await Sandbox.create("pratik-test");
       return sandbox.sandboxId;      
       })
 
