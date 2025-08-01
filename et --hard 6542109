@@ -1,0 +1,38 @@
+[33mdcca00e[m[33m ([m[1;31mfriend/main[m[33m)[m name update
+[33m83c95fa[m deployment
+[33m42ff0c8[m add .env.example
+[33m7464825[m update README.md 4
+[33mcbb73a1[m update README.md 3
+[33me74227f[m update README.md 2
+[33m6ed4755[m update README.md
+[33mb60451c[m update name
+[33m1deea8b[m bug-fix
+[33m10d752b[m Add agent memory
+[33mf7bdb82[m add biling methods
+[33m94dab77[m prisma schema update
+[33md31cbb6[m pricing working mvp add
+[33m3aece14[m auth completed
+[33m6bd07e5[m auth error fixed
+[33m83ffa56[m just before protected trpc procedures
+[33mfce2d71[m still working till now
+[33ma82152a[m working till now
+[33m95e522a[m error fix
+[33mf5d8520[m theme tweak
+[33m29f4081[m add home page
+[33m68880e0[m code view add
+[33m6542109[m fragment preview add
+[33mf49771c[m Project Header add
+[33m56de22d[m Add Message UI
+[33mddac5ad[m projects setup
+[33mf5815fb[m messages system
+[33mbecca6b[m agent tools added
+[33mfe0f19e[m e2b sandbox setup
+[33m8b710f8[m AI as Background Job
+[33mc8a7f5a[m Inngest Setupo
+[33m12d385f[m Inngest Setup
+[33mc6de108[m Update README.md 3
+[33m170aa3a[m Update README.md 2
+[33m3e51ace[m Update README.md
+[33m44c8130[m trpc setup
+[33md8c470c[m database setup
+[33m345a281[m project initialize
