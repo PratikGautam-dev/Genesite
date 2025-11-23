@@ -65,11 +65,7 @@ Lovable Clone is a comprehensive, open-source recreation of the Lovable platform
 
 ### Local Development Setup
 
-1. **Repository Setup**
-   ```bash
-   git clone git@github.com:jishkhar/Vibe.git
-   cd Vibe
-   ```
+
 
 2. **Dependency Installation**
    ```bash
