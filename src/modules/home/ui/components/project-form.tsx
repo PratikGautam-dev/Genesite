@@ -1,3 +1,4 @@
+"use client"
 import { z } from "zod";
 import { toast } from "sonner"
 import { useState } from "react";
@@ -10,11 +11,10 @@ import { cn } from "@/lib/utils";
 import { useTRPC } from "@/trpc/client";
 import { Button } from "@/components/ui/button";
 import { Form, FormField } from "@/components/ui/form";
+import { useRouter } from "next/navigation";
 
 
-interface Props {
-    projectId: string;
-};
+
 
 const formSchema = z.object({
     value: z.string()
@@ -22,7 +22,8 @@ const formSchema = z.object({
         .max(10000, { message: "Value is too long." }),
 })
 
-export const MessageForm = ({ projectId }: Props) => {
+export const ProjectForm = () => { 
+    const router=useRouter()
     const trpc = useTRPC();
     const queryClient = useQueryClient();
 
@@ -33,12 +34,12 @@ export const MessageForm = ({ projectId }: Props) => {
         }, 
     });
 
-    const createMessage = useMutation(trpc.messages.create.mutationOptions({
-        onSuccess: () => {
-            form.reset();
+    const createProject = useMutation(trpc.projects.create.mutationOptions({
+        onSuccess: (data) => {
             queryClient.invalidateQueries(
-                trpc.messages.getMany.queryOptions({ projectId }),
+              trpc.projects.getMany.queryOptions()
             );
+            router.push(`/projects/${data.id}`)
             //TODO: Invalildate usage status
         },
         onError: (error) => {
@@ -48,15 +49,14 @@ export const MessageForm = ({ projectId }: Props) => {
     }))
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
-        await createMessage.mutateAsync({
+        await createProject.mutateAsync({
             value: values.value,
-            projectId: projectId,
         })
     };
 
     const [isFocused, setIsFocused] = useState(false);
-    const showUsage = false;
-    const isPending = createMessage.isPending;
+
+    const isPending = createProject.isPending;
     const isButtonDisabled = isPending || !form.formState.isValid;
 
     return (
@@ -66,7 +66,7 @@ export const MessageForm = ({ projectId }: Props) => {
                 className={cn(
                     "relative border p-4 pt-1 rounded-xl bg-sidebar dark:bg-sidebar transition-all",
                     isFocused && "shadow-xs",
-                    showUsage && "rouded-t-none",
+                  
                 )}
             >
                 <FormField 

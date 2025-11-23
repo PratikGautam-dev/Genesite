@@ -305,4 +305,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-**Copyright © 2025 k_jish. All rights reserved.**
+
